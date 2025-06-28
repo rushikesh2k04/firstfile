@@ -155,6 +155,33 @@ node app.js
 def add_file(file_id: Bytes, cid: Bytes, permissions: Bytes, is_public: Bool) -> arc4.Bool:
     # Store metadata in BoxMap
 ```
+```python
+@arc4.abimethod
+def get_file(file_id: Bytes) -> Bytes:
+    # Return CID and permissions if public or owned by sender
+```
+```python
+@arc4.abimethod
+def update_file(file_id: Bytes, new_cid: Bytes, new_permissions: Bytes) -> arc4.Bool:
+    # Update CID and permissions if sender is owner
+```
+```python
+@arc4.abimethod
+def delete_file(file_id: Bytes) -> arc4.Bool:
+    # Delete metadata if sender is owner
+```
+```python
+@arc4.abimethod
+def get_views(file_id: Bytes) -> UInt64:
+    # Return number of views for a file
+
+```
+```python
+@arc4.abimethod
+def file_exists(file_id: Bytes) -> Bool:
+    # Check if file exists in storage
+
+```
 
 ---
 
